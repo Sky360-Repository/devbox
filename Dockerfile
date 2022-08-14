@@ -23,6 +23,6 @@ ADD Makefile /root
 
 CMD clear && \
     echo "********************************************" && \
-    echo "* Welcome to Sky360 development enviorment *" && \
+    echo "* Welcome to Sky360 development environment *" && \
     echo "********************************************\r\n" && \
     bash

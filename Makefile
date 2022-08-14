@@ -22,4 +22,5 @@ hd:
 
 full_frame:
 # 3872x2764 8bit GREY
-	os2 run v4l2_camera v4l2_camera_node --ros-args -p pixel_format:="GREY" -p output_encoding:="mono8" -p image_size:="[3872x2764]"
+	ros2 run v4l2_camera v4l2_camera_node --ros-args -p pixel_format:="GREY" -p output_encoding:="mono8" -p image_size:="[3856,2764]"
+
