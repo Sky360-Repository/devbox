@@ -4,7 +4,7 @@ build:
 	sudo docker build . -t sky360/devbox-ros2:latest
 
 run: build
-	sudo docker run -it --net=host --device /dev/video0 sky360/devbox-ros2
+	sudo docker run -it --net=host --device /dev/video0 --hostname devbox-ros2 sky360/devbox-ros2
 
 # command to run inside docker for the v4l2_camera
 
