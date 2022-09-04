@@ -1,7 +1,11 @@
 FROM ros:latest
 # ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update
-RUN apt-get -y install ros-${ROS_DISTRO}-v4l2-camera
+
+RUN apt update
+RUN apt -y upgrade
+RUN apt -y install ros-${ROS_DISTRO}-v4l2-camera
+RUN apt -y install ros-${ROS_DISTRO}-image-transport-plugins
+
 #    #
 #    # Clean up
 #    && apt-get autoremove -y \
@@ -13,7 +17,7 @@ RUN apt-get -y install ros-${ROS_DISTRO}-v4l2-camera
 WORKDIR /root
 
 ADD Makefile /root
-
+ADD .bashrc /root
 
 # Set up auto-source of workspace for ros user
 #ARG WORKSPACE
@@ -21,8 +25,4 @@ ADD Makefile /root
 #RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/ros/.bashrc
 
 
-CMD clear && \
-    echo "*********************************************" && \
-    echo "* Welcome to Sky360 development environment *" && \
-    echo "*********************************************\r\n" && \
-    bash
+CMD bash
